@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="440.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lr1_interface.ModalWindowController">
+   <top>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ComboBox fx:id="postModalWindow1" layoutX="14.0" layoutY="25.0" prefWidth="200.0" />
+                <TextField fx:id="fullName1" layoutX="223.0" layoutY="25.0" prefWidth="200.0" />
+
+                <ComboBox fx:id="postModalWindow2" layoutX="14.0" layoutY="65.0" prefWidth="200.0" />
+                <TextField fx:id="fullName2" layoutX="223.0" layoutY="65.0" prefWidth="200.0" />
+
+                <ComboBox fx:id="postModalWindow3" layoutX="14.0" layoutY="105.0" prefWidth="200.0" />
+                <TextField fx:id="fullName3" layoutX="223.0" layoutY="105.0" prefWidth="200.0" />
+
+                <Button fx:id="saveButton" layoutX="273.0" layoutY="165.0" mnemonicParsing="false" onAction="#saveButton" text="Сохранить" />
+                <Button fx:id="cancelButton" layoutX="351.0" layoutY="165.0" mnemonicParsing="false" onAction="#cancel" prefWidth="74.4" text="Отмена" />
+                <Label layoutX="14.0" layoutY="5.0" text="Должность:" />
+                <Label layoutX="223.0" layoutY="5.0" text="ФИО:" />
+            </children>
+        </AnchorPane>
+   </top>
+</BorderPane>

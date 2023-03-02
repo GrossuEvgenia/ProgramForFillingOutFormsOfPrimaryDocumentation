@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="780.0" minWidth="1148.0" pickOnBounds="false" prefHeight="600.0" prefWidth="1148.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lr1_interface.HelloController">
+   <children>
+      <Label layoutX="27.0" layoutY="14.0" prefHeight="30.0" prefWidth="82.0" text="АКТ  № ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField layoutX="121.0" layoutY="16.0" prefHeight="25.0" prefWidth="90.0" />
+      <DatePicker layoutX="288.0" layoutY="16.0" />
+      <Label layoutX="231.0" layoutY="14.0" prefHeight="30.0" prefWidth="50.0" text="Дата">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="44.0" prefHeight="30.0" prefWidth="493.0" text="О БОЕ, ЛОМЕ И УТРАТЕ ПОСУДЫ И ПРИБОРОВ" AnchorPane.leftAnchor="27.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="101.0" text="Организация" AnchorPane.leftAnchor="29.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="organization" layoutX="288.0" layoutY="101.0" prefHeight="25.0" prefWidth="351.0" AnchorPane.leftAnchor="287.0" />
+      <Label layoutX="27.0" layoutY="138.0" text="Структурное подразделение" AnchorPane.leftAnchor="29.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="unit" layoutX="288.0" layoutY="138.0" prefHeight="25.0" prefWidth="351.0" AnchorPane.leftAnchor="287.0" />
+      <Label layoutX="27.0" layoutY="175.0" text="За период" AnchorPane.leftAnchor="29.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <DatePicker layoutX="288.0" layoutY="175.0" prefHeight="26.0" prefWidth="175.0" AnchorPane.leftAnchor="288.0" />
+      <DatePicker layoutX="464.0" layoutY="175.0" prefHeight="26.0" prefWidth="175.0" AnchorPane.leftAnchor="464.0" />
+      <Label layoutX="772.0" layoutY="101.0" text="Форма по ОКПО" AnchorPane.leftAnchor="772.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="772.0" layoutY="138.0" text="Вид деятельности по ОКДП" AnchorPane.leftAnchor="772.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="772.0" layoutY="176.0" text="Вид операции" AnchorPane.leftAnchor="772.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="1034.0" layoutY="101.0" prefHeight="25.0" prefWidth="90.0" AnchorPane.leftAnchor="1034.0" />
+      <ScrollPane layoutX="27.0" layoutY="289.0">
+         <content>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="1095.0">
+              <columns>
+                <TableColumn fx:id="columnId" prefWidth="38.800021946430206" sortType="DESCENDING" text="№ " />
+                <TableColumn prefWidth="161.19997787475586" text="Посуда, приборы">
+                     <columns>
+                        <TableColumn fx:id="columnNameDish" prefWidth="100.19998168945312" text="Наименование" />
+                        <TableColumn fx:id="columnCodeDish" prefWidth="50.20001220703125" text="Код" />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="columnPrice" prefWidth="74.79998779296875" text="Цена&#10; руб.&#10; коп." />
+                  <TableColumn prefWidth="611.5999755859375" text="Бой, лом, утрачено, пропало">
+                     <columns>
+                        <TableColumn prefWidth="180.79998779296875" text="бой, лом">
+                           <columns>
+                              <TableColumn fx:id="columnNumberBroke" prefWidth="96.20001220703125" text="количество шт." />
+                              <TableColumn fx:id="columnPriceBroke" prefWidth="101.0" text="сумма, руб. коп." />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="122.4000244140625" text="утрачено, пропало">
+                           <columns>
+                              <TableColumn fx:id="columnNumberLost" prefWidth="96.0" text="количество шт." />
+                              <TableColumn fx:id="columnPriceLost" prefWidth="101.0" text="сумма руб. коп." />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="75.0" text="всего">
+                           <columns>
+                              <TableColumn fx:id="columnNumberAll" prefWidth="96.0" text="количество шт." />
+                              <TableColumn fx:id="columnPriceAll" prefWidth="101.0" text="сумма  руб. коп." />
+                           </columns>
+                        </TableColumn>
+                     </columns>
+                  </TableColumn>
+                  <TableColumn fx:id="columnReason" prefWidth="123.5999755859375" text="Обстоятельства&#10; боя" />
+                  <TableColumn fx:id="columnDescription" prefWidth="98.4000244140625" text="Примечание" />
+              </columns>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <TextField layoutX="1034.0" layoutY="138.0" prefHeight="25.0" prefWidth="90.0" AnchorPane.leftAnchor="1034.0" />
+      <TextField layoutX="1034.0" layoutY="176.0" prefHeight="25.0" prefWidth="90.0" AnchorPane.leftAnchor="1034.0" />
+      <Label layoutX="27.0" layoutY="214.0" text="Материально ответственное лицо" AnchorPane.leftAnchor="29.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="postMainWindow" layoutX="288.0" layoutY="214.0" prefHeight="25.0" prefWidth="351.0" AnchorPane.leftAnchor="287.0" />
+      <TextField layoutX="772.0" layoutY="214.0" prefHeight="26.0" prefWidth="352.0" AnchorPane.leftAnchor="772.0" />
+      <Label layoutX="426.0" layoutY="240.0" prefHeight="30.0" prefWidth="76.0" text="(Должность)" AnchorPane.leftAnchor="426.0" />
+      <Label layoutX="890.0" layoutY="240.0" prefHeight="30.0" prefWidth="146.0" text="(Фамилия Имя Отчество)" AnchorPane.leftAnchor="890.0" />
+      <TableView fx:id="tableViewConcl" layoutX="27.0" layoutY="499.0" prefHeight="98.0" prefWidth="671.0">
+        <columns>
+          <TableColumn fx:id="columnConcl" prefWidth="75.0" />
+            <TableColumn prefWidth="611.5999755859375" text="Бой, лом, утрачено, пропало">
+               <columns>
+                  <TableColumn prefWidth="180.79998779296875" text="бой, лом">
+                     <columns>
+                        <TableColumn fx:id="columnNumberBrokeConcl" prefWidth="96.20001220703125" text="количество шт." />
+                        <TableColumn fx:id="columnPriceBrokeConcl" prefWidth="101.0" text="сумма, руб. коп." />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn prefWidth="122.4000244140625" text="утрачено, пропало">
+                     <columns>
+                        <TableColumn fx:id="columnNumberLostConcl" prefWidth="96.0" text="количество шт." />
+                        <TableColumn fx:id="columnPriceLostConcl" prefWidth="101.0" text="сумма руб. коп." />
+                     </columns>
+                  </TableColumn>
+                  <TableColumn prefWidth="75.0" text="всего">
+                     <columns>
+                        <TableColumn fx:id="columnNumberAllConcl" prefWidth="96.0" text="количество шт." />
+                        <TableColumn fx:id="columnPriceAllConcl" prefWidth="101.0" text="сумма  руб. коп." />
+                     </columns>
+                  </TableColumn>
+               </columns>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <Label layoutX="27.0" layoutY="615.0" text="Перечисленное в графе &quot;Бой, лом&quot; столовая посуда и приборы в количестве ">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="600.0" layoutY="615.0" prefHeight="25.0" prefWidth="101.0" />
+      <Label layoutX="613.0" layoutY="634.0" prefHeight="30.0" prefWidth="76.0" text="(Прописью)" />
+      <Label layoutX="716.0" layoutY="615.0" text="уничтожены в нашем присутствии">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="236.0" layoutY="673.0" text="Решение комисии:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="382.0" layoutY="673.0" prefHeight="98.0" prefWidth="316.0" />
+      <Button layoutX="833.0" layoutY="734.0" mnemonicParsing="false" prefWidth="140.0" text="Экспортировать">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="983.0" layoutY="734.0" mnemonicParsing="false" prefWidth="140.0" text="Отмена">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="983.0" layoutY="499.0" mnemonicParsing="false" prefWidth="140.0" text="Удалить">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Button layoutX="833.0" layoutY="499.0" mnemonicParsing="false" prefWidth="140.0" text="Добавить">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Hyperlink fx:id="hyperlink" layoutX="27.0" layoutY="669.0" onAction="#openModalForm" text="Расшифровка подписей">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</Pane>

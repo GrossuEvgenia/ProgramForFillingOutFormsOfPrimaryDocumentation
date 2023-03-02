@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.lr1_interface.HelloController">
+   <top>
+      <Pane prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="327.0" layoutY="15.0" prefHeight="25.0" prefWidth="60.0" text="АКТ №">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label layoutX="327.0" layoutY="52.0" text="О БОЕ, ЛОМЕ И УТРАТЕ ПОСУДЫ И ПРИБОРОВ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <TextField fx:id="number" layoutX="387.0" layoutY="15.0" prefWidth="89.0" />
+            <Label layoutX="482.0" layoutY="15.0" prefHeight="25.0" prefWidth="60.0" text="ОТ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="date" layoutX="512.0" layoutY="15.0" prefHeight="25.0" prefWidth="186.0" />
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <Label layoutX="36.0" layoutY="12.0" prefWidth="238.0" text="Организация" AnchorPane.leftAnchor="27.0">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <ComboBox fx:id="organization" layoutX="299.0" layoutY="12.0" prefHeight="25.0" prefWidth="288.0" AnchorPane.leftAnchor="392.0" />
+         <Label layoutX="36.0" layoutY="42.0" prefWidth="210.0" text="Структурное подразделение" AnchorPane.leftAnchor="20.0">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <ComboBox fx:id="unit" layoutX="299.0" layoutY="42.0" prefHeight="25.0" prefWidth="288.0" AnchorPane.leftAnchor="392.0" />
+         <Label layoutX="36.0" layoutY="72.0" prefWidth="210.0" text="За период" AnchorPane.leftAnchor="27.0">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <DatePicker fx:id="dateStart" layoutX="299.0" layoutY="72.0" prefHeight="26.0" prefWidth="144.0" AnchorPane.leftAnchor="299.0" />
+         <DatePicker fx:id="dateEnd" layoutX="443.0" layoutY="72.0" prefHeight="26.0" prefWidth="144.0" AnchorPane.leftAnchor="440.0" />
+         <Label layoutX="617.0" layoutY="12.0" text="по ОКПО" AnchorPane.leftAnchor="617.0">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="617.0" layoutY="42.0" prefWidth="204.0" text="Вид деятельности по ОКДП" AnchorPane.leftAnchor="617.0">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <Label layoutX="617.0" layoutY="72.0" text="Вид операции" AnchorPane.leftAnchor="619.0">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="okpo" layoutX="821.0" layoutY="12.0" prefHeight="25.0" prefWidth="84.0" AnchorPane.leftAnchor="821.0" />
+         <TextField fx:id="okpd" layoutX="821.0" layoutY="42.0" prefHeight="25.0" prefWidth="84.0" />
+         <TextField fx:id="operation" layoutX="821.0" layoutY="72.0" prefHeight="25.0" prefWidth="84.0" />
+         <Label layoutX="36.0" layoutY="140.0" prefWidth="252.0" text="Материально ответственное лицо">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <ComboBox fx:id="post" layoutX="299.0" layoutY="140.0" prefHeight="25.0" prefWidth="288.0" />
+         <TextField fx:id="fullName" layoutX="617.0" layoutY="140.0" prefHeight="25.0" prefWidth="288.0" />
+         <Label layoutX="406.0" layoutY="172.0" text="(Должность)" />
+         <Label layoutX="744.0" layoutY="172.0" text="(ФИО)" />
+         <Label layoutX="256.0" layoutY="416.0" text="Итого:" />
+         <Label fx:id="allBroke" layoutX="330.0" layoutY="416.0" prefWidth="30.0" text="0" />
+         <Label fx:id="allAddBroke" layoutX="406.0" layoutY="416.0" prefWidth="30.0" text="0.0" />
+         <Label fx:id="allLost" layoutX="482.0" layoutY="416.0" prefWidth="30.0" text="0" />
+         <Label fx:id="allAddLost" layoutX="557.0" layoutY="416.0" prefWidth="30.0" text="0.0" />
+         <Label fx:id="allNumber" layoutX="639.0" layoutY="416.0" prefWidth="30.0" text="0" />
+         <Label fx:id="allAddNumber" layoutX="706.0" layoutY="416.0" prefWidth="30.0" text="0.0" />
+
+         <ScrollPane layoutX="36.0" layoutY="209.0">
+            <content>
+               <TableView fx:id="tableView" prefHeight="200.0" prefWidth="952.0">
+                  <columns>
+                     <TableColumn fx:id="columnId" prefWidth="48.19999694824219" text="№" />
+                     <TableColumn prefWidth="177.39999389648438" text="Посуда, приборы">
+                        <columns>
+                           <TableColumn fx:id="columnNameDish" prefWidth="75.0" text="наимено&#10;вание" />
+                           <TableColumn fx:id="columnCodeDish" prefWidth="75.19998168945312" text="код" />
+                        </columns>
+                     </TableColumn>
+                     <TableColumn fx:id="columnPrice" prefWidth="75.0" text="Цена&#10;руб.коп.&#10;" />
+                     <TableColumn prefWidth="75.0" text="Бой, лом, утрачено, пропало">
+                        <columns>
+                           <TableColumn prefWidth="75.0" text="бой, лом">
+                              <columns>
+                                 <TableColumn fx:id="columnNumberBroke" prefWidth="75.0" text="количество&#10;шт.&#10;&#10;" />
+                                 <TableColumn fx:id="columnPriceBroke" prefWidth="75.0" text="сумма,&#10;руб. коп.&#10;" />
+                              </columns>
+                           </TableColumn>
+                           <TableColumn prefWidth="75.0" text="утрачено, пропало">
+                              <columns>
+                                 <TableColumn fx:id="columnNumberLost" prefWidth="75.0" text="количество&#10;шт." />
+                                 <TableColumn fx:id="columnPriceLost" prefWidth="75.0" text="сумма,&#10;руб. коп.&#10;" />
+                              </columns>
+                           </TableColumn>
+                           <TableColumn prefWidth="75.0" text="всего">
+                              <columns>
+                                 <TableColumn fx:id="columnNumberAll" prefWidth="75.0" text="количество&#10;шт.&#10;" />
+                                 <TableColumn fx:id="columnPriceAll" prefWidth="75.0" text="сумма,&#10;руб. коп.&#10;" />
+                              </columns>
+                           </TableColumn>
+                        </columns>
+                     </TableColumn>
+                     <TableColumn fx:id="columnReason" prefWidth="139.4000244140625" text="Обстоятельства боя,&#10;лома, утраты,&#10;пропажи.&#10;Виновные лица&#10;(должность, фио)." />
+                     <TableColumn fx:id="columnDescription" minWidth="9.2000732421875" prefWidth="84.5999755859375" text="Примечание" />
+                  </columns>
+               </TableView>
+            </content>
+         </ScrollPane>
+         <Button fx:id="addButton" layoutX="840.0" layoutY="416.0" mnemonicParsing="false" onAction="#addString" prefWidth="72.0" text="Добавить" />
+         <Button fx:id="deleteButton" layoutX="916.0" layoutY="416.0" mnemonicParsing="false" onAction="#removeRowButton" prefWidth="72.0" text="Удалить" />
+         <Label layoutX="36.0" layoutY="467.0" prefWidth="252.0" text="Решение комисии:">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <TextArea fx:id="solveText" layoutX="184.0" layoutY="467.0" prefHeight="101.0" prefWidth="803.0" />
+         <Button fx:id="exportButton" layoutX="751.0" layoutY="619.0" mnemonicParsing="false" onAction="#exportButton" prefHeight="25.0" prefWidth="112.0" text="Экспортировать" />
+         <Hyperlink fx:id="hyperLink" layoutX="36.0" layoutY="596.0" onAction="#openModalForm" text="Рассшифровка подписей" />
+         <Button fx:id="cancelButton" layoutX="873.0" layoutY="619.0" onAction="#clear" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="Отмена" />
+      </Pane>
+   </center>
+</BorderPane>
